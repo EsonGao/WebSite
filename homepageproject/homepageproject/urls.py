@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from app import views as app_views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib import staticfiles
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', app_views.home),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
